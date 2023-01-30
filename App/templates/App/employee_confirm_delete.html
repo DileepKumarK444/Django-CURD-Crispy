@@ -1,0 +1,48 @@
+{% extends 'App/employee_list.html' %}
+
+<!-- Navbar -->
+{% block navbar %}
+bg-danger
+{% endblock navbar %}
+
+<!-- Navbar content -->
+{% block nav-content %}
+<i class="fas fa-user-times">&nbsp;&nbsp; Delete Employee</i>
+{% endblock nav-content %}
+
+{% block footer %}
+style="color:#ff7f7f;"
+{% endblock footer %}
+
+<!-- Page content -->
+{% block content %}
+<br>
+<div class="container mt-5" style="width: 450px;">
+    <div class="card p-3 border-dark">
+
+        <h6 class="modal-title">
+            <i class="fas fa-trach-alt"> &nbsp;&nbsp; Delete Employee
+
+            </i>
+        </h6>
+        <hr>
+        <div class="text-center text-danger">
+            <i class="fas fa-times-circle fa-5x mb-4 mt-2"></i>
+        </div>
+        <div class="text-center text-danger">
+            <span>DO YOU WANT TO DELETE THIS EMPLOYEE?</span>
+            <div class="text-dark mt-3 mb-2">
+                Employee <strong>{{employee.name}}</strong>
+            </div>
+            <hr>
+            <form action="">
+                {% csrf_token %}
+                <input type="submit" value="Delete" class="btn btn-outline-danger btn-sm ms-2" style="float: right;">
+                <a href="{% url 'read' %}" class="btn btn-secondary btn-sm" style="float: right;">Cancel</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

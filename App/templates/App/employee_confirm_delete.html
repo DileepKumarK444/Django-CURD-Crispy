@@ -35,7 +35,7 @@ style="color:#ff7f7f;"
                 Employee <strong>{{employee.name}}</strong>
             </div>
             <hr>
-            <form action="">
+            <form method="POST">
                 {% csrf_token %}
                 <input type="submit" value="Delete" class="btn btn-outline-danger btn-sm ms-2" style="float: right;">
                 <a href="{% url 'read' %}" class="btn btn-secondary btn-sm" style="float: right;">Cancel</a>
